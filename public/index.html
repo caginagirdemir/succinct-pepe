@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roulette with John W. Rick Kid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+  <body class="bg-color">
+   
+    <div class="container" id="main-content">
+        <div class="row text-center mt-3">
+            <div class="col-12">
+                <img src="assets/img/banner.png">
+            </div>
+        </div>
+        
+        <!--row1-->
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-4 col-sm-12">
+                <hr class="text-white" />
+            </div>
+            <div class="col-md-2 col-sm-12 text-end">
+                <h5 class="text-light">1. Connect Wallet </h5>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <!--row2-->
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-6 col-sm-12">
+                <button class="btn btn-primary" id="walletConnect">Connect (only Metamask)</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+       
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-6 col-sm-12 pt-4">
+                <h5 class="text-light">Wallet Address: </h5> <span class="text-white" id="walletAddress">⚠️ Please connect your wallet first!</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <!--row3-->
+        <div class="row mt-4 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-4 col-sm-12">
+                <hr class="text-white" />
+            </div>
+            <div class="col-md-2 col-sm-12 text-end">
+                <h5 class="text-light">2. Set Revolver</h5>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-6 col-sm-12">
+                <span class="text-28 text-light ">Win Chance: </span> <span class="text-white text-28" id="chance"></span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-4 col-sm-12">
+                <label for="customRange3" class="form-label text-light">Place the Bullet</label>
+                <input type="range" class="form-range" min="1" max="5" step="1" value="1" id="customRange3">
+            </div>
+            <div class="col-5"></div>
+        </div>
+        <div class="row mx-md-5 mx-sm-0 d-flex justify-content-start"> 
+            <div class="col-3"></div>
+            <div class="col-auto">
+                <img id="chamberImage" class="mt-4" src="./assets/img/5.png">
+            </div>
+        </div>
+        
+        
+            
+        <div class="row mt-5 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-2 col-sm-12">
+                <button class="btn btn-dark btn-lg" id="spinButton">Fire💥</button>
+                
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <spin class="text-white" id="result"></spin>                
+            </div>
+          
+            <div class="col-3"></div>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-4 col-sm-12">
+                <hr class="text-white" />
+            </div>
+            <div class="col-md-2 col-sm-12 text-end">
+                <h5 class="text-light" >3. Share Us</h5>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-6 col-sm-12 ">
+            </div>
+            
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-3"></div>
+            <div class="col-md-6 col-sm-12 ">
+                <button class="btn btn-primary" id="shareOnX">Share on X</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <br>
+       
+        <div class="row mt-3 mx-md-5 mx-sm-0">
+            <div class="col-2"></div>
+            <div class="col-md-2 col-sm-12">
+                <h5 class="text-light"></h5>
+            </div>
+            <div class="col-6">
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+    <div class="container d-none" id="shot-place">
+        <div class="row d-flex justify-content-center align-items-center gap-0">
+            <div class="col-auto">
+                <img src="./assets/img/cowboy_head.png" id="cowboyImage">
+            </div>
+            <div class="col-auto">
+               <img src="./assets/img/gun.png" id="gunImage" class="d-block">
+            </div>
+        </div>
+    </div>
+    
+    <!--Modal-->
+    <div class="modal fade" id="result-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="modal-body bg-black">
+                    <img id="resultImg">
+
+                    <button class="btn btn-primary" id="refreshButton">Reload Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="gunShotSound" src="./assets/audio/gun-shot.mp3"></audio>
+    <audio id="gunTriggerSound" src="./assets/audio/gun-trig.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script>
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+        const rangeInput = document.getElementById("customRange3");
+        const chanceDisplay = document.getElementById("chance");
+        const imageDisplay = document.getElementById("chamberImage");
+        const walletAddressElement = document.getElementById("walletAddress");
+        const walletConnectButton = document.getElementById("walletConnect");
+        const spinButton = document.getElementById("spinButton");
+        const resultDisplay = document.getElementById("result");
+        const mainContent = document.getElementById("main-content");
+        const shotPlace = document.getElementById("shot-place");
+        const resultImg = document.getElementById("resultImg");
+        const values = {
+            1: { chance: 16, image: "./assets/img/5.png" },
+            2: { chance: 33, image: "./assets/img/4.png" },
+            3: { chance: 50, image: "./assets/img/3.png" },
+            4: { chance: 66, image: "./assets/img/2.png" },
+            5: { chance: 83, image: "./assets/img/1.png" }
+        };
+
+        let isConnected = false;
+        let provider, signer;
+        let userAddress = "";
+
+        document.getElementById("shareOnX").addEventListener("click", function() {
+            const text = encodeURIComponent("Bullet Roulette with Succinct Pepe");
+            const url = encodeURIComponent("https://killsuccinctpepe.web.app/"); 
+            
+            const imageUrl = "";
+            const twitterShareUrl = `https://twitter.com/intent/tweet?text=${text}&url=%0A${url}%0A${encodeURIComponent(imageUrl)}`;
+            window.open(twitterShareUrl, "_blank");
+        });
+
+        function updateValues() {
+        const value = rangeInput.value;
+        chanceDisplay.textContent = values[value].chance + "%";
+        imageDisplay.src = values[value].image;
+    }
+
+    rangeInput.addEventListener("input", updateValues);
+    updateValues();
+
+    document.getElementById("refreshButton").addEventListener("click", function() {
+            location.reload();
+        });
+
+    async function connectWallet() {
+        if (typeof window.ethereum !== "undefined") {
+            try {
+                console.log("test")
+                provider = new ethers.providers.Web3Provider(window.ethereum);
+
+                const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+                userAddress = accounts[0];
+
+                walletAddressElement.innerText = userAddress;
+                isConnected = true;
+                walletConnectButton.innerText = "Disconnect";
+                walletConnectButton.removeEventListener("click", connectWallet);
+                walletConnectButton.addEventListener("click", disconnectWallet);
+                
+            } catch (error) {
+                console.error("User denied account access:", error);
+                isConnected = false;
+            }
+        } else {
+            walletAddressElement.innerText = "MetaMask not installed.";
+        }
+    }
+
+    function disconnectWallet() {
+        isConnected = false;
+        userAddress = "";
+        walletAddressElement.innerText = "⚠️ Please connect your wallet first!";
+        bulletCountElement.innerText = "⚠️ Please connect your wallet first!";
+        walletConnectButton.innerText = "Connect (only Metamask)";
+        
+        walletConnectButton.removeEventListener("click", disconnectWallet);
+        walletConnectButton.addEventListener("click", connectWallet);
+    }
+
+    spinButton.addEventListener("click", async function() {
+        if (!isConnected) {
+            resultDisplay.innerHTML = "⚠️ Please connect your wallet first!";
+            return;
+        }
+
+        const selectedBullets = parseInt(rangeInput.value);
+        resultDisplay.innerHTML = "Processing transaction...";
+
+        try {
+            // First approve the game contract to spend tokens
+            let chamber = document.getElementById("chamberImage");
+            chamber.classList.add("spin");
+
+            setTimeout(() => {
+                chamber.classList.remove("spin");
+
+                mainContent.classList.add("d-none");
+                shotPlace.classList.remove("d-none");
+                shotPlace.classList.add("d-initial");
+            }, 1000);
+
+            let gun = document.getElementById("gunImage");
+            gun.classList.remove("animate-gun");
+            void gun.offsetWidth; 
+            gun.classList.add("animate-gun");
+
+            let random = Math.random() * 100;
+            let winChance = values[selectedBullets].chance;
+            let angle = 0;
+            let speed = 20;
+
+            let interval = setInterval(function() {
+                angle += speed;
+                imageDisplay.style.transform = `rotate(${angle}deg)`;
+                if (speed > 0.5) {
+                    speed *= 0.95;
+                } else {
+                    clearInterval(interval);
+
+                    if (random <= winChance) {
+                        document.getElementById("gunTriggerSound").play();
+                        resultDisplay.innerHTML = "💀 You Lost!";
+                        resultImg.src = "./assets/img/save.png";
+                    } else {
+                        document.getElementById("gunShotSound").play();
+                        resultDisplay.innerHTML = "🎉 You Win!";
+                        resultImg.src = "./assets/img/kill.png";
+                    }
+                    setTimeout(() => {
+                        const resultModalInstance = new bootstrap.Modal(document.getElementById('result-modal'));
+                        resultModalInstance.show();
+                    }, 2000);
+                }
+            }, 50);
+
+        } catch (error) {
+            console.error("Transaction failed:", error);
+            resultDisplay.innerHTML = "❌ Transaction failed!";
+        }
+    });
+
+
+    walletConnectButton.addEventListener("click", connectWallet);
+});
+    </script>
+
+
+
+</body>
+</html>
